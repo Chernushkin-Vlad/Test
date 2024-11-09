@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    display: flex;
+    flex-direction: column;
+justify-content: center;
+align-items: center;
+background-color: teal;
+}
+ul{
+    background-color: black;
+    color: wheat;
+    width: 200px;
+    text-align: center;
+}
+li{
+    list-style: none;
+}
+p{
+    width: 500px;
+}
