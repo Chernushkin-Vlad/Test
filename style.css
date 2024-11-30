@@ -4,23 +4,28 @@
     box-sizing: border-box;
 }
 
-
-body{
+header {
     display: flex;
     flex-direction: column;
-justify-content: center;
-align-items: center;
-background-color: teal;
 }
-ul{
-    background-color: black;
-    color: wheat;
-    width: 200px;
-    text-align: center;
+.hed_text {
+    align-self: center;
 }
-li{
-    list-style: none;
+
+.btn {
+    align-self: flex-end;
+    position: absolute;
+    margin: 10px;
 }
-p{
-    width: 500px;
+.container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+padding: 0px 50px 0px 50px;
+}
+
+.item {
+background-color: hotpink;
+padding: 10px;
+border-radius: 30px;
 }
