@@ -33,3 +33,27 @@ background-color: hotpink;
 padding: 10px;
 border-radius: 30px;
 }
+
+.user {
+    background-color: hotpink;
+padding: 10px;
+border-radius: 30px;
+width: 400px;
+margin: 0 auto 20px;
+
+}
+.user img{
+    height: 300px;
+    width: 300px;
+}
+
+#block {
+    display: none;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.655);
+    padding: 10px;
+    border-radius: 30px;
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+}
