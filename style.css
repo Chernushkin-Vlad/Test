@@ -19,11 +19,15 @@ header {
 }
 .container{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 400px);
     grid-gap: 50px;
 padding: 0px 50px 0px 50px;
 }
+.item img {
+    height: 300px;
+    width: 300px;
 
+}
 .item {
 background-color: hotpink;
 padding: 10px;

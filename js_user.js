@@ -11,6 +11,7 @@ fetch('https://my-json-server.typicode.com/Chernushkin-Vlad/Project_1/db')
             <h4>Id: ${element.id}</h4>
             <p>${element.description}</p>
             <img src="${element.photo_url}" >
+            <p><a href="Users.html?id=${element.author_id}">Seller profile</a></p>
         </div>
         `
         });
