@@ -15,7 +15,7 @@ header {
 .btn {
     align-self: flex-end;
     position: absolute;
-    margin: 10px;
+    margin: 30px;
 }
 .container{
     display: grid;
@@ -49,11 +49,28 @@ margin: 0 auto 20px;
 
 #block {
     display: none;
-    position: absolute;
-    background-color: rgba(0, 0, 0, 0.655);
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 10px;
     border-radius: 30px;
-    width: 200px;
-    height: 200px;
     margin: 10px;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#block img{
+height: 100px;
+}
+
+.buy_all{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    right: 10px;
+    bottom: 10px;
+}
+
+.trash{
+    color: white;
 }
