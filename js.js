@@ -4,13 +4,22 @@ const urlParams = new URLSearchParams(window.location.search);
 const id = urlParams.get("id");
 const block = document.getElementById("block");
 let product_position = 0;
+const my_headers = {
+    "Content-Type": "application/json",
+    "x-apikey": "675dbe5c7aaf6151e8b53c49",
+    "cache-control": "no-cache"
+}
 
-fetch('https://my-json-server.typicode.com/Chernushkin-Vlad/Project_1/db')
+
+fetch('https://tammi-3685.restdb.io/rest/product', {
+    method: 'GET',
+    headers: my_headers
+})
     .then(async function (respon) {
-        let data = await respon.json();
+            let data = await respon.json();
 
-
-        data.product.forEach(element => {
+console.log(data)
+        data.forEach(element => {
 
             content.innerHTML += `
                 <div class="item"> 
@@ -19,7 +28,7 @@ fetch('https://my-json-server.typicode.com/Chernushkin-Vlad/Project_1/db')
                 <p>${element.description}</p>
                 <img src="${element.photo_url}" >
             <p><a href="Users.html?id=${element.author_id}">Seller profile</a></p>
-            <p><button onclick="BuyButton(${product_position},${element.id})" > Buy </button></p>
+            <p><button onclick="BuyButton(${product_position},'${element._id}')" > Buy </button></p>
             </div>
             `
             product_position++;
@@ -28,26 +37,27 @@ fetch('https://my-json-server.typicode.com/Chernushkin-Vlad/Project_1/db')
     })
 
 let array_product = [];
-let sum = 0;
 function BuyButton(alfa, beta) {
 
 
-    fetch(`https://my-json-server.typicode.com/Chernushkin-Vlad/Project_1/db`)
+    fetch('https://tammi-3685.restdb.io/rest/product', {
+        method: 'GET',
+        headers: my_headers
+    })
         .then(async function (respon) {
             let dat = await respon.json();
-            
+
             block.innerHTML += `
             <div class='trash'>
-            <h3>Name: ${dat.product[alfa].name} </h3>
-           <h4>Price: ${dat.product[alfa].price}</h4>
-            <p><img src="${dat.product[alfa].photo_url}" ></p> 
+            <h3>Name: ${dat[alfa].name} </h3>
+           <h4>Price: ${dat[alfa].price}</h4>
+            <p><img src="${dat[alfa].photo_url}" ></p> 
             <hr>        
             </div>
            `;
-           sum+=dat.product[alfa].price;
-           
-           let producta = dat.product.find(function (p) {
-                return p.id == beta;
+
+            let producta = dat.find(function (p) {
+                return p._id == beta;
             })
 
             array_product.push(producta);
@@ -56,11 +66,10 @@ function BuyButton(alfa, beta) {
         })
 
 
-
 }
 
 
-function BuyAll(){
+function BuyAll() {
     block.innerHTML = ``;
     block.innerHTML = `<button onclick="BuyAll()" class="buy_all"></button>`;
     array_product = [];
